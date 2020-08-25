@@ -3,6 +3,7 @@ version: ~> 1.0
 
 # TODO
 # export sandbox token to run tests
+# travis will fail all tests without this
 
-# script:
-# - rake
+script:
+- bundle exec rake
