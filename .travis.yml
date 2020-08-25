@@ -3,6 +3,13 @@ version: ~> 1.0
 
 # TODO
 # export sandbox token to run tests
+# current travis file will cause all tests to fail
 
-# script:
-# - rake
+import:
+- land-of-apps/land-of-apps:travis/ruby-imports.yml
+
+script:
+- APPMAP=true bundle exec rake
+
+after_script:
+- env DEBUG=true ruby ./upload-appmaps tmp/appmap/minitest/*
